@@ -25,24 +25,11 @@
   <div class="form-group">
     <%= f.label :type, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :type, :class => 'form-control' %>
+      <%= f.select :type, Device::TYPES, :class => 'form-control' %>
     </div>
     <%=f.error_span(:type) %>
   </div>
-  <div class="form-group">
-    <%= f.label :on, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :on, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:on) %>
-  </div>
-  <div class="form-group">
-    <%= f.label :room_category_id, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :room_category_id, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:room_category_id) %>
-  </div>
+
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">

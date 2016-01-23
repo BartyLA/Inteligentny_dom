@@ -1,13 +1,24 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
+
   get 'admin/index'
 
+  get '/room/:id', to: 'main#room', as: 'main_room'
+  get '/category/:id', to: 'main#category', as: 'main_category'
+
   devise_for :users
-  resources :devices
-  resources :room_categories
-  resources :categories
-  resources :rooms
+
+  scope "/admin" do
+    resources :users
+    resources :devices
+    resources :room_categories
+    resources :categories
+    resources :rooms
+  end
+
   root 'main#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

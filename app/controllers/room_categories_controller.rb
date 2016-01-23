@@ -19,6 +19,7 @@ class RoomCategoriesController < ApplicationController
 
   # GET /room_categories/1/edit
   def edit
+    @room_category.devices.build
   end
 
   # POST /room_categories
@@ -69,6 +70,7 @@ class RoomCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_category_params
-      params.require(:room_category).permit(:room_id, :category_id)
+      params.require(:room_category).permit(:room_id, :category_id,
+                                            devices_attributes: [:id, :name, :type, :room_category_id])
     end
 end

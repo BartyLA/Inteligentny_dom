@@ -49,4 +49,5 @@ gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'devise'
+gem 'bootstrap-switch-rails'
 

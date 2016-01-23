@@ -69,6 +69,6 @@ class RoomsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_params
-      params.require(:room).permit(:name)
+      params.require(:room).permit(:name, category_ids: []) #category_ids: zawsze jest tablica przy asocjacji wiele do wiele
     end
 end
