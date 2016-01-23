@@ -1,0 +1,21 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <%= content_tag(:li, link_to('Rooms', '#rooms', data: {toggle: 'tab'}), class: room_class)  %>
+  <%= content_tag(:li, link_to('Categories', '#categories', data: {toggle: 'tab'}), class:  category_class ) %>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+
+  <%= content_tag(:div, class: "tab-pane " + room_class, id: 'rooms') do -%>
+      <% @rooms.each do |room| %>
+          <p>	<%= link_to room.name, main_room_path(room)  %> </p>
+      <% end %>
+  <% end -%>
+
+  <%= content_tag(:div, class: "tab-pane " + category_class, id: 'categories' ) do -%>
+      <% @categories.each do |cat| %>
+          <p>	<%= link_to cat.name , main_category_path(cat) %> </p>
+      <% end %>
+  <% end -%>
+</div>
